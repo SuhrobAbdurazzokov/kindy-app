@@ -1,0 +1,5 @@
+export enum EducationLevel {
+  HIGHER = 'HIGHER',
+  SECONDARY_SPECIAL = 'SECONDARY SPECIAL',
+  SECONDARY = 'SECONDARY',
+}
