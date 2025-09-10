@@ -1,8 +1,9 @@
 import { PaymentStatus } from 'src/common/enum/paymentStatus.enum';
 import { PaymentType } from 'src/common/enum/paymentType.enum';
-import { BaseEntity, Column, Entity, ManyToOne, OneToMany } from 'typeorm';
+import { Column, Entity, ManyToOne, OneToMany } from 'typeorm';
 import { Kindergarten } from './kindergarten.repository';
 import { Notification } from './notification.entity';
+import { BaseEntity } from 'src/common/database/base.entity';
 
 @Entity('payment')
 export class Payment extends BaseEntity {

@@ -48,6 +48,12 @@ export class Children extends BaseEntity {
   })
   photo: string;
 
+  @Column({
+    type: "decimal",
+    nullable: true
+  })
+  monthlySum: number
+
   @ManyToOne(() => Group, (group) => group.childrens)
   group: Group;
 

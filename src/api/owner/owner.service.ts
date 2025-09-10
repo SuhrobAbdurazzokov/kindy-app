@@ -1,9 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { CreateOwnerDto } from './dto/create-owner.dto';
 import { UpdateOwnerDto } from './dto/update-owner.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Owner } from 'src/core/entity/owner.entity';
+import type { OwnerRepository } from 'src/core/repository/owner.repository';
 
 @Injectable()
 export class OwnerService {
+  constructor(
+    @InjectRepository(Owner) private readonly ownerRepo: OwnerRepository,
+  ) {}
   create(createOwnerDto: CreateOwnerDto) {
     return 'This action adds a new owner';
   }

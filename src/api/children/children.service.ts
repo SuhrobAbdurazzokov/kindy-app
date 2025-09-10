@@ -1,9 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { CreateChildDto } from './dto/create-child.dto';
 import { UpdateChildDto } from './dto/update-child.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Children } from 'src/core/entity/children.entity';
+import type { ChildrenRepository } from 'src/core/repository/children.repository';
 
 @Injectable()
 export class ChildrenService {
+  constructor(
+    @InjectRepository(Children)
+    private readonly childrenRepo: ChildrenRepository,
+  ) {}
   create(createChildDto: CreateChildDto) {
     return 'This action adds a new child';
   }

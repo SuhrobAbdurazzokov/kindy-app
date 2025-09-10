@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, ManyToOne } from 'typeorm';
+import { BaseEntity } from 'src/common/database/base.entity';
+import { Column, Entity, ManyToOne } from 'typeorm';
 import { Children } from './children.entity';
 
 @Entity('childAttendance')

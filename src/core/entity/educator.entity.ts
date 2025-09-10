@@ -1,7 +1,8 @@
 import { EducationLevel } from 'src/common/enum/educationLevel.enum';
-import { BaseEntity, Column, Entity, ManyToOne, OneToMany } from 'typeorm';
+import {  Column, Entity, ManyToOne, OneToMany } from 'typeorm';
 import { Group } from './group.entity';
 import { EducatorAttendace } from './educatorAttendance.entity';
+import { BaseEntity } from 'src/common/database/base.entity';
 
 @Entity('educator')
 export class Educator extends BaseEntity {

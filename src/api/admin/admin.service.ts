@@ -1,9 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { CreateAdminDto } from './dto/create-admin.dto';
 import { UpdateAdminDto } from './dto/update-admin.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Admin } from 'src/core/entity/admin.entity';
+import type { AdminRepositoy } from 'src/core/repository/admin.repository';
 
 @Injectable()
 export class AdminService {
+  constructor(
+    @InjectRepository(Admin) private readonly adminRepo: AdminRepositoy,
+  ) {}
   create(createAdminDto: CreateAdminDto) {
     return 'This action adds a new admin';
   }
