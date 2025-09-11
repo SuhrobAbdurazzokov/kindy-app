@@ -14,6 +14,7 @@ import { NotificationModule } from './api/notification/notification.module';
 import { OwnerModule } from './api/owner/owner.module';
 import { ParentModule } from './api/parent/parent.module';
 import { PaymentModule } from './api/payment/payment.module';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -22,6 +23,9 @@ import { PaymentModule } from './api/payment/payment.module';
       url: config.DB_URI,
       autoLoadEntities: true,
       synchronize: config.DB_SYNC,
+    }),
+    JwtModule.register({
+      global: true,
     }),
     AdminModule,
     ChildAttendanceModule,

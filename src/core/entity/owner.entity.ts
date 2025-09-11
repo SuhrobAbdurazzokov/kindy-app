@@ -1,6 +1,6 @@
 import { BaseEntity } from 'src/common/database/base.entity';
 import { Column, Entity, OneToMany } from 'typeorm';
-import { Kindergarten } from './kindergarten.repository';
+import { Kindergarten } from './kindergarten.entity';
 
 @Entity('owner')
 export class Owner extends BaseEntity {
@@ -42,6 +42,12 @@ export class Owner extends BaseEntity {
     default: true,
   })
   isActive: boolean;
+
+  @Column({
+    type: 'boolean',
+    default: false,
+  })
+  isDeleted: boolean;
 
   @OneToMany(() => Kindergarten, (kindergarten) => kindergarten.owner, {
     onDelete: 'CASCADE',

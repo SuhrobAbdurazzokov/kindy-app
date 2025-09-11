@@ -3,10 +3,13 @@ import { OwnerService } from './owner.service';
 import { OwnerController } from './owner.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Owner } from 'src/core/entity/owner.entity';
+import { CryptoService } from 'src/common/crypt/Crypto';
+import { TokenService } from 'src/common/token/token';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Owner])],
   controllers: [OwnerController],
-  providers: [OwnerService],
+  providers: [OwnerService, CryptoService, TokenService],
+  exports: [OwnerService],
 })
 export class OwnerModule {}

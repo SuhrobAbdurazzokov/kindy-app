@@ -1,6 +1,6 @@
 export enum GroupActivityType {
-    MEAL = "MEAL",
-    PLAY = "PLAY",
-    LESSON = "LESSON",
-    OTHER = "OTHER"
+  MEAL = 'MEAL',
+  PLAY = 'PLAY',
+  LESSON = 'LESSON',
+  OTHER = 'OTHER',
 }

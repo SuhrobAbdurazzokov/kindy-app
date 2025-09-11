@@ -40,6 +40,12 @@ export class Kindergarten extends BaseEntity {
   })
   cardNumber: number;
 
+  @Column({
+    type: 'boolean',
+    default: false,
+  })
+  isDeleted: boolean;
+
   @ManyToOne(() => Owner, (owner) => owner.kindergarten, {
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
@@ -53,8 +59,8 @@ export class Kindergarten extends BaseEntity {
   groups: Group[];
 
   @OneToMany(() => Payment, (payments) => payments.kindergarten, {
-    onDelete: "CASCADE",
-    onUpdate: "CASCADE"
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
   })
-  payments: Payment[]
+  payments: Payment[];
 }

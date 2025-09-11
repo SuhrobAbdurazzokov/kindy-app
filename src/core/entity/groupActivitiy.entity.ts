@@ -32,8 +32,8 @@ export class GroupActivity extends BaseEntity {
   group: Group;
 
   @OneToMany(() => Media, (media) => media.groupActivity, {
-    onDelete: "CASCADE",
-    onUpdate: "CASCADE"
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
   })
-  media: Media[]
+  media: Media[];
 }

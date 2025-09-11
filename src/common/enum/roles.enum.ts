@@ -1,4 +1,4 @@
-export enum AccessRoles {
+export enum Roles {
   SUPER_ADMIN = 'SUPERADMIN',
   ADMIN = 'ADMIN',
   OWNER = 'OWNER',

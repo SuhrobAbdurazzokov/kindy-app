@@ -1,7 +1,7 @@
 import { PaymentStatus } from 'src/common/enum/paymentStatus.enum';
 import { PaymentType } from 'src/common/enum/paymentType.enum';
 import { Column, Entity, ManyToOne, OneToMany } from 'typeorm';
-import { Kindergarten } from './kindergarten.repository';
+import { Kindergarten } from './kindergarten.entity';
 import { Notification } from './notification.entity';
 import { BaseEntity } from 'src/common/database/base.entity';
 

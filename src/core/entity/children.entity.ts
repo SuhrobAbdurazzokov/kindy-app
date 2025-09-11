@@ -49,20 +49,20 @@ export class Children extends BaseEntity {
   photo: string;
 
   @Column({
-    type: "decimal",
-    nullable: true
+    type: 'decimal',
+    nullable: true,
   })
-  monthlySum: number
+  monthlySum: number;
 
   @ManyToOne(() => Group, (group) => group.childrens)
   group: Group;
 
   @OneToMany(() => ChildAttendance, (attendance) => attendance.children, {
-    onDelete: "CASCADE",
-    onUpdate: "CASCADE"
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
   })
-  attendance: ChildAttendance[]
+  attendance: ChildAttendance[];
 
   @ManyToOne(() => Parent, (parent) => parent.childrens)
-  parent: Parent
+  parent: Parent;
 }

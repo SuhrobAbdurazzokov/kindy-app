@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { GroupActivityService } from './group-activity.service';
 import { CreateGroupActivityDto } from './dto/create-group-activity.dto';
 import { UpdateGroupActivityDto } from './dto/update-group-activity.dto';
@@ -23,7 +31,10 @@ export class GroupActivityController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateGroupActivityDto: UpdateGroupActivityDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateGroupActivityDto: UpdateGroupActivityDto,
+  ) {
     return this.groupActivityService.update(+id, updateGroupActivityDto);
   }
 

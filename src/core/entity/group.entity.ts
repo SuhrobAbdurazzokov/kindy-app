@@ -1,6 +1,6 @@
 import { BaseEntity } from 'src/common/database/base.entity';
 import { Column, Entity, ManyToOne, OneToMany } from 'typeorm';
-import { Kindergarten } from './kindergarten.repository';
+import { Kindergarten } from './kindergarten.entity';
 import { GroupActivity } from './groupActivitiy.entity';
 import { Children } from './children.entity';
 import { Educator } from './educator.entity';
@@ -26,14 +26,14 @@ export class Group extends BaseEntity {
   activities: GroupActivity[];
 
   @OneToMany(() => Children, (childrens) => childrens.group, {
-    onDelete: "CASCADE",
-    onUpdate: "CASCADE"
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
   })
-  childrens: Children[]
+  childrens: Children[];
 
   @OneToMany(() => Educator, (educators) => educators.group, {
-    onDelete: "CASCADE",
-    onUpdate: "CASCADE"
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
   })
-  educators: Educator[]
+  educators: Educator[];
 }

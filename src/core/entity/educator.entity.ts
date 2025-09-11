@@ -1,5 +1,5 @@
 import { EducationLevel } from 'src/common/enum/educationLevel.enum';
-import {  Column, Entity, ManyToOne, OneToMany } from 'typeorm';
+import { Column, Entity, ManyToOne, OneToMany } from 'typeorm';
 import { Group } from './group.entity';
 import { EducatorAttendace } from './educatorAttendance.entity';
 import { BaseEntity } from 'src/common/database/base.entity';
@@ -72,12 +72,11 @@ export class Educator extends BaseEntity {
   sallary: number;
 
   @ManyToOne(() => Group, (group) => group.educators)
-  group: Group
+  group: Group;
 
   @OneToMany(() => EducatorAttendace, (attendance) => attendance.educator, {
-    onDelete: "CASCADE",
-    onUpdate: "CASCADE"
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
   })
-  attendance: EducatorAttendace[]
-
+  attendance: EducatorAttendace[];
 }

@@ -8,5 +8,6 @@ import { Parent } from 'src/core/entity/parent.entity';
   imports: [TypeOrmModule.forFeature([Parent])],
   controllers: [ParentController],
   providers: [ParentService],
+  exports: [ParentService],
 })
 export class ParentModule {}

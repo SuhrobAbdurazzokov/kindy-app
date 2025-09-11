@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { HttpStatus, ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { config } from './config';
+import { AllExceptionFilter } from './infrastructure/exception/AllException.filter';
 
 export class Application {
   static async start() {
@@ -18,6 +19,8 @@ export class Application {
         errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
       }),
     );
+
+    app.useGlobalFilters(new AllExceptionFilter());
 
     const globalPrefix = 'api/v1';
     app.setGlobalPrefix(globalPrefix);

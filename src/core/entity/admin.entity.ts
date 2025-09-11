@@ -1,5 +1,5 @@
 import { BaseEntity } from 'src/common/database/base.entity';
-import { AccessRoles } from 'src/common/enum/roles.enum';
+import { Roles } from 'src/common/enum/roles.enum';
 import { Column, Entity } from 'typeorm';
 
 @Entity('admin')
@@ -25,10 +25,10 @@ export class Admin extends BaseEntity {
 
   @Column({
     type: 'enum',
-    enum: AccessRoles,
-    default: AccessRoles.ADMIN,
+    enum: Roles,
+    default: Roles.ADMIN,
   })
-  role: AccessRoles;
+  role: Roles;
 
   @Column({
     type: 'varchar',
@@ -42,4 +42,10 @@ export class Admin extends BaseEntity {
     default: true,
   })
   isActive: boolean;
+
+  @Column({
+    type: 'boolean',
+    default: false,
+  })
+  isDeleted: boolean;
 }
